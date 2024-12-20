@@ -55,9 +55,6 @@ class Transform:
             "float": lambda x, **kwargs: pd.to_numeric(x, errors="coerce"),
             "string": lambda x, **kwargs: x.astype(str),
             # Enhanced transformations
-            "to_int": lambda x, **kwargs: pd.to_numeric(x, errors="coerce").astype("Int64"),
-            "to_float": lambda x, **kwargs: pd.to_numeric(x, errors="coerce"),
-            "to_string": lambda x, **kwargs: x.astype(str),
             "clean_string": lambda x, **kwargs: (
                 x.str.strip().str.upper() if kwargs.get("upper", False) else x.str.strip()
             ),
