@@ -28,7 +28,7 @@ CustomerID:
   Transform: copy
 Country:
   Input: Country
-  Output: country
+  Output: countryA
   Transform: copy
 
 

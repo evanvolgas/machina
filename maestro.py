@@ -47,7 +47,6 @@ class Transform:
         self.builtin_transforms = {
             "to_datetime": self._to_datetime,
             "to_date": self._to_date,
-            "format_date": self._format_date,
             "split_name": self._split_name,
             # Basic transformations
             "copy": lambda x, **kwargs: x.copy(),
@@ -172,16 +171,6 @@ class Transform:
 
         except Exception as e:
             logger.error(f"Error converting to date: {e}")
-            raise
-
-    def _format_date(self, data: pd.Series, output_format: str) -> pd.Series:
-        """Format datetime/date to string."""
-        try:
-            if not pd.api.types.is_datetime64_any_dtype(data):
-                data = pd.to_datetime(data, errors="coerce")
-            return data.dt.strftime(output_format)
-        except Exception as e:
-            logger.error(f"Error formatting date: {e}")
             raise
 
     def _split_name(self, data: pd.Series) -> pd.Series:
