@@ -1,4 +1,4 @@
-from maestro import Transform, BigQueryLoad
+from machina import Transform, BigQueryLoad
 import pandas as pd
 
 # Example usage:
@@ -7,7 +7,7 @@ if __name__ == "__main__":
     transformer = Transform("transformation.yaml", strict_mode=False)
 
     # Sample data
-    df = pd.read_csv("~/Desktop/test.csv"))
+    df = pd.read_csv("~/Desktop/test.csv")
 
     # Transform will skip any configured transformations where input columns don't exist
     transformed_df = transformer.transform(df)
