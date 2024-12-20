@@ -53,8 +53,8 @@ class Transform:
             "int": lambda x, **kwargs: pd.to_numeric(x, errors="coerce").astype("Int64"),
             "float": lambda x, **kwargs: pd.to_numeric(x, errors="coerce"),
             "string": lambda x, **kwargs: x.astype(str),
-            # Enhanced transformations
             "proper": lambda x, **kwargs: (x.str.strip().str.title()),
+            # TODO: Add transformations for addresses and names
         }
 
         # Load and validate config

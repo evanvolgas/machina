@@ -4,7 +4,7 @@ InvoiceNo:
   Transform: copy
 StockCode:
   Input: StockCode
-  Output: stock_cod
+  Output: stock_code
   Transform: copy
 Description:
   Input: Description
