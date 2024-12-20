@@ -9,15 +9,11 @@ StockCode:
 Description:
   Input: Description
   Output: description
-  Transform: copy
+  Transform: proper
 Quantity:
   Input: Quantity
   Output: quantity
   Transform: int
-Description:
-  Input: InvoiceDate
-  Output: invoice_date
-  Transform: to_date
 UnitPrice:
   Input: UnitPrice
   Output: unit_price
@@ -28,20 +24,9 @@ CustomerID:
   Transform: copy
 Country:
   Input: Country
-  Output: countryA
+  Output: country
   Transform: copy
-
-
-
-
-
-
-
-
-# Description:
-#  Input: InvoiceDate
-#  Output: invoice_date
-#  Transform: to_date
-#  Parameters:
-#    format: "%Y-%m-%d %H:%M:%S"
-#    timezone: "UTC"
+InvoiceDate:
+  Input: InvoiceDate
+  Output: invoice_date
+  Transform: to_date
