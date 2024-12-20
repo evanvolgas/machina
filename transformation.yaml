@@ -1,0 +1,47 @@
+InvoiceNo:
+  Input: InvoiceNo
+  Output: invoice_no
+  Transform: copy
+StockCode:
+  Input: StockCode
+  Output: stock_cod
+  Transform: copy
+Description:
+  Input: Description
+  Output: description
+  Transform: copy
+Quantity:
+  Input: Quantity
+  Output: quantity
+  Transform: int
+Description:
+  Input: InvoiceDate
+  Output: invoice_date
+  Transform: to_date
+UnitPrice:
+  Input: UnitPrice
+  Output: unit_price
+  Transform: float
+CustomerID:
+  Input: CustomerID
+  Output: customer_id
+  Transform: copy
+Country:
+  Input: Country
+  Output: country
+  Transform: copy
+
+
+
+
+
+
+
+
+# Description:
+#  Input: InvoiceDate
+#  Output: invoice_date
+#  Transform: to_date
+#  Parameters:
+#    format: "%Y-%m-%d %H:%M:%S"
+#    timezone: "UTC"
