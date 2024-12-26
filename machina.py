@@ -1,12 +1,13 @@
+import logging
 from dataclasses import dataclass
-from typing import Optional, Dict, List, Union, TypedDict, Callable
+from datetime import datetime
+from functools import lru_cache
+from typing import Callable, Dict, List, Optional, TypedDict, Union
+
 import pandas as pd
+import pytz
 import yaml
 from google.cloud import bigquery
-import logging
-from datetime import datetime
-import pytz
-from functools import lru_cache
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -72,8 +73,8 @@ class Transform:
     def _get_transform_func(self, transform_str: str) -> Callable:
         """Get the appropriate transformation function."""
         builtin_transforms = {
-            "to_datetime": self._to_datetime,
-            "to_date": self._to_date,
+            "datetime": self._to_datetime,
+            "date": self._to_date,
             "split_name": self._split_name,
             "copy": lambda x, **_: x.copy(),
             "int": lambda x, **_: pd.to_numeric(x, errors="coerce").astype("Int64"),

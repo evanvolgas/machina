@@ -29,4 +29,4 @@ Country:
 InvoiceDate:
   Input: InvoiceDate
   Output: invoice_date
-  Transform: to_date
+  Transform: date
